@@ -164,7 +164,7 @@ def compute_phase_metrics(df):
 def compute_deviation(current_df, ref_df):
     interp_cur = interp1d(current_df['time_sec'], current_df['beantemp'], kind='linear', fill_value='extrapolate')
     temp_on_ref = interp_cur(ref_df['time_sec'])
-    return np.trapezoid(np.abs(temp_on_ref - ref_df['beantemp']), ref_df['time_sec'])
+    return np.trapz(np.abs(temp_on_ref - ref_df['beantemp']), ref_df['time_sec'])
 
 def main():
     print("="*50)

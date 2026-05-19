@@ -1,0 +1,2 @@
+dry_gas,mail_gas,dev_gas,total_gas,dry_temp_rise,mail_temp_rise,dev_temp_rise,total_temp_rise,dry_efficiency,mail_efficiency,dev_efficiency,total_efficiency,batch_id,deviation,start_gas
+12800.0,37590.0,4265.0,54655.0,-130.1,92.29999999999998,29.099999999999994,-8.700000000000017,-1.01640625,0.24554402766693265,0.682297772567409,-0.015918031287164975,reference,0.0,50

@@ -1,0 +1,5 @@
+*.csv
+*.xls
+*.xlsx
+__pycache__/
+.idea/

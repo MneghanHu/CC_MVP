@@ -1,4 +1,4 @@
-# app.py - 完整版（支持上传时设为标准参考曲线）
+# app.py - 完整版（不显示 MAE 和 R² 指标）
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -121,7 +121,7 @@ else:
     st.sidebar.warning("Data not loaded. Please upload at least one batch or run process_data.py")
 
 # ----------------------------------------------------------------------
-# 文件上传与删除功能（增加“设为参考曲线”复选框）
+# 文件上传与删除功能
 st.sidebar.markdown("---")
 st.sidebar.markdown("## 📤 Import New Roast")
 os.makedirs("roasts", exist_ok=True)
@@ -404,7 +404,7 @@ if data_loaded:
             dev_val = current_sum['deviation']
             st.metric("Curve Deviation (℃·s)", f"{dev_val:.0f}")
 
-            # 排名（仍然使用全局 master_sum 中的所有批次）
+            # 排名
             master_sum['dev_rank'] = master_sum['deviation'].rank(ascending=True, method='min')
             master_sum['gas_rank'] = master_sum['total_gas'].rank(ascending=True, method='min')
             total_batches = len(master_sum)
